@@ -16,8 +16,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "prettier",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "camelcase": "off",
