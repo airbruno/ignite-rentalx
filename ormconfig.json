@@ -1,11 +1,14 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "localhost",
+  "host": "172.23.0.3",
   "username": "docker",
   "password": "ignite",
   "database": "rentalx",
-  "migrations": ["./src/database/migrations/*.ts"],
+  "entities":[
+    "./src/modules/*/entities/*.ts"
+  ],
+  "migration": ["./src/database/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }
