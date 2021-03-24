@@ -2,6 +2,7 @@ import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateCategory1616593791104 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    console.log("Rodando migration!");
     await queryRunner.createTable(
       new Table({
         name: "categories",
