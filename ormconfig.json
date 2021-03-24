@@ -1,15 +1,17 @@
 {
   "type": "postgres",
   "port": 5432,
-  "host": "172.23.0.3",
+  "host": "database_ignite",
   "username": "docker",
   "password": "ignite",
   "database": "rentalx",
+  "syncronize": true,
   "entities":[
-    "./src/modules/*/entities/*.ts"
+    "src/modules/cars/entities/*.ts"
   ],
-  "migration": ["./src/database/migrations/*.ts"],
+  "migration": ["src/database/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
+    "migrationsDir": "src/database/migrations",
+    "entitiesDir": "src/modules/cars/entities"
   }
 }
