@@ -6,11 +6,10 @@
   "password": "ignite",
   "database": "rentalx",
   "entities":[
-    "./src/modules/**/entities/*.ts"
+    "./src/modules/**/infra/typeorm/entities/*.ts"
   ],
-  "migrations": ["./src/database/migrations/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
-    "migrationsDir": "./src/database/migrations",
-    "entitiesDir": "./src/modules/cars/entities"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }

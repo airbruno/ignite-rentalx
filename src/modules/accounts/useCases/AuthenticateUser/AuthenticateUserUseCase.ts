@@ -2,8 +2,8 @@ import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "@errors/AppError";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+import { AppError } from "@shared/errors/AppError";
 
 interface IRequest {
   email: string;
@@ -39,7 +39,7 @@ class AuthenticateUserUseCase {
 
     const token = sign({}, "25513b4ce8804121f2f6f5e47550e453", {
       subject: user.id,
-      expiresIn: "1d",
+      expiresIn: 1,
     });
 
     const tokenReturn: IResponse = {

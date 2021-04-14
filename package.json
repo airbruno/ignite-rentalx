@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev -r tsconfig-path/register --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "jest"
+    "dev": "ts-node-dev  -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
+    "test": "jest",
+    "seed:admin": "ts-node-dev ./src/shared/infra/typeorm/seed/admin.ts" 
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
@@ -44,6 +45,7 @@
     "swagger-ui-express": "^4.1.6",
     "tsyringe": "^4.4.0",
     "typeorm": "^0.2.31",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "ts-jest": "^26.5.4"
   }
 }
