@@ -36,10 +36,10 @@ class AuthenticateUserUseCase {
     if (!passwordMatch) {
       throw new AppError("Incorrect pasword or e-mail!");
     }
-
+    const expireTime = "1d";
     const token = sign({}, "25513b4ce8804121f2f6f5e47550e453", {
       subject: user.id,
-      expiresIn: 1,
+      expiresIn: expireTime,
     });
 
     const tokenReturn: IResponse = {
