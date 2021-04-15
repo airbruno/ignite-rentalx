@@ -9,6 +9,7 @@ interface ICarsRepository {
     name?: string
   ): Promise<Car[]>;
   create(data: ICreateCarDTO): Promise<Car>;
+  findById(id: string): Promise<Car>;
 }
 
 export { ICarsRepository };

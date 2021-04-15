@@ -20,7 +20,6 @@ class CategoriesRepository implements ICategoriesRepository {
     });
 
     await this.repository.save(category);
-    console.log(`create working:${category}`);
   }
 
   async list(): Promise<Category[]> {
@@ -30,7 +29,6 @@ class CategoriesRepository implements ICategoriesRepository {
 
   async findByName(name: string): Promise<Category> {
     const category = await this.repository.findOne({ name });
-    console.log(`findbyname working:${category}`);
     return category;
   }
 }
